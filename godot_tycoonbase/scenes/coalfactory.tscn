@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dld7x4cb1y65q"]
+
+[ext_resource type="Texture2D" uid="uid://dcq41l0k8oi2w" path="res://buildings/acetone-20241110-181450-745.png" id="2_vs3pr"]
+
+[node name="coalfactory" type="Node2D"]
+
+[node name="texture" type="Sprite2D" parent="."]
+show_behind_parent = true
+z_as_relative = false
+y_sort_enabled = true
+texture_filter = 1
+scale = Vector2(1.158, 0.958)
+texture = ExtResource("2_vs3pr")
+offset = Vector2(-1, -13.115)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true

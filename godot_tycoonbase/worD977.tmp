@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=4 uid="uid://fdxohs7ag8go"]
+
+[ext_resource type="Texture2D" uid="uid://cmckg1jo1yt06" path="res://IsometricTileSet.png" id="1_1hghj"]
+[ext_resource type="Script" path="res://cameracontroller.gd" id="2_ovf1h"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_waqjb"]
+resource_name = "terrain"
+texture = ExtResource("1_1hghj")
+texture_region_size = Vector2i(64, 40)
+0:0/0 = 0
+0:1/0 = 0
+1:0/0 = 0
+1:1/0 = 0
+2:0/0 = 0
+2:1/0 = 0
+2:2/0 = 0
+1:2/0 = 0
+0:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+4:1/0 = 0
+3:1/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+5:1/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+6:1/0 = 0
+6:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nqf34"]
+resource_name = "water"
+texture = ExtResource("1_1hghj")
+texture_region_size = Vector2i(64, 20)
+1:10/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+3:6/0 = 0
+2:6/0 = 0
+1:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+4:8/0 = 0
+3:8/0 = 0
+2:8/0 = 0
+1:8/0 = 0
+0:8/0 = 0
+0:6/0 = 0
+5:8/0 = 0
+0:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+1:12/0 = 0
+0:12/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_df3vt"]
+tile_shape = 1
+tile_size = Vector2i(64, 32)
+sources/0 = SubResource("TileSetAtlasSource_waqjb")
+sources/1 = SubResource("TileSetAtlasSource_nqf34")
+
+[node name="world" type="TileMapLayer"]
+y_sort_enabled = true
+texture_filter = 1
+tile_map_data = PackedByteArray("AAD/////AAABAAAAAAD//wAAAAABAAAAAAD//wEAAAABAAAAAAAAAAAAAAABAAAAAAAAAP//AAABAAAAAAAAAP7/AAABAAAAAAD///3/AAABAAAAAAD///7/AAABAAAAAAD+////AAABAAAAAAA=")
+tile_set = SubResource("TileSet_df3vt")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.5, 2.5)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+script = ExtResource("2_ovf1h")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = -1
+offset_right = 1000.0
+offset_bottom = 1000.0
+pivot_offset = Vector2(50, 50)
