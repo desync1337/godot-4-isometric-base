@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcrnumu2r1v1l"]
+
+[ext_resource type="Texture2D" uid="uid://cmckg1jo1yt06" path="res://IsometricTileSet.png" id="1_0y8s8"]
+
+[node name="3dcursor" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_0y8s8")
+region_enabled = true
+region_rect = Rect2(0.077137, -0.172326, 64.3067, 39.2933)

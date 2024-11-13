@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://fdxohs7ag8go"]
+
+[ext_resource type="TileSet" uid="uid://dperyicqg3poq" path="res://tileset.tres" id="1_n6y0l"]
+[ext_resource type="Script" path="res://scripts/cameracontroller.gd" id="2_0swqw"]
+[ext_resource type="Script" path="res://scenes/world.gd" id="2_7cvdc"]
+[ext_resource type="PackedScene" uid="uid://bcrnumu2r1v1l" path="res://scenes/3dcursor.tscn" id="3_oftpy"]
+[ext_resource type="FontFile" uid="uid://cgc8ky1gpv1ft" path="res://fonts/Pixel12x10Mono.ttf" id="4_jcdgp"]
+[ext_resource type="PackedScene" uid="uid://b0b2vl7nyw3b3" path="res://scenes/Qmenu.tscn" id="9_pptdq"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_v6hxd"]
+noise_type = 2
+frequency = 0.0222
+fractal_type = 0
+fractal_octaves = 1
+metadata/_preview_in_3d_space_ = true
+
+[node name="world" type="TileMapLayer"]
+y_sort_enabled = true
+texture_filter = 1
+scale = Vector2(1.00359, 1.01073)
+tile_set = ExtResource("1_n6y0l")
+y_sort_origin = -15
+script = ExtResource("2_7cvdc")
+noise_texture = SubResource("FastNoiseLite_v6hxd")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2, 2)
+zoom = Vector2(1.7, 1.7)
+script = ExtResource("2_0swqw")
+
+[node name="debugtext" type="Label" parent="Camera2D"]
+texture_filter = 1
+offset_left = -458.362
+offset_top = -253.303
+offset_right = -252.362
+offset_bottom = -211.303
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_jcdgp")
+theme_override_font_sizes/font_size = 12
+text = "param1:
+param2:
+fak u"
+
+[node name="water" type="ColorRect" parent="."]
+offset_left = -1028.0
+offset_top = -1004.0
+offset_right = 1194.0
+offset_bottom = 1218.0
+pivot_offset = Vector2(50, 50)
+color = Color(0.254902, 0.588235, 0.823529, 1)
+
+[node name="3dcursor" parent="." instance=ExtResource("3_oftpy")]
+visible = false
+position = Vector2(1, 31)
+
+[node name="qmenu" parent="." instance=ExtResource("9_pptdq")]
+visible = false
+position = Vector2(83.6995, 6.92569)
