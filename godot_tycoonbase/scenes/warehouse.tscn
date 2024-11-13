@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dfv83xiaax121"]
 
-[ext_resource type="Texture2D" uid="uid://balh6jt6yogyb" path="res://buildings/acetone-20241110-182530-576.png" id="1_iy7y6"]
+[ext_resource type="Texture2D" uid="uid://balh6jt6yogyb" path="res://sprites/buildings/acetone-20241110-182530-576.png" id="1_iy7y6"]
 
 [node name="warehouse" type="Node2D"]
 
