@@ -6,4 +6,4 @@ camera controller , zoom
 some tiles and assets
 
 Uploading it here because maybe i will scrap the current idea
-and start working on something similar but different
+and start working on something different
